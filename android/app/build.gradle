@@ -107,9 +107,15 @@ android {
     }
 }
 
+repositories {
+    maven { url 'https://artifacts.netcore.co.in/artifactory/android' }
+}
+
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+    implementation 'com.netcore.android:smartech-nudges:10.2.14'
+    implementation 'com.netcore.android:smartech-sdk:3.7.6'
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")

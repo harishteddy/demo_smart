@@ -7,6 +7,11 @@ import com.facebook.react.ReactHost
 import com.facebook.react.ReactNativeApplicationEntryPoint.loadReactNative
 import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 
+import io.hansel.hanselsdk.Hansel
+import io.hansel.core.logger.HSLLogLevel
+import com.netcore.android.Smartech
+import java.lang.ref.WeakReference
+
 class MainApplication : Application(), ReactApplication {
 
   override val reactHost: ReactHost by lazy {
@@ -22,6 +27,17 @@ class MainApplication : Application(), ReactApplication {
 
   override fun onCreate() {
     super.onCreate()
+
+  Smartech.getInstance(WeakReference(this)).initializeSdk(this)
+  Smartech.getInstance(WeakReference(applicationContext)).setDebugLevel(9)
+   HSLLogLevel.all.setEnabled(true);
+  HSLLogLevel.mid.setEnabled(true);
+  HSLLogLevel.debug.setEnabled(true);
+
+
+
     loadReactNative(this)
+
+
   }
 }
