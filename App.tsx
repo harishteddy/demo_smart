@@ -32,12 +32,20 @@ function SettingsScreen() {
 export default function App() {
   return (
     <SafeAreaProvider>
+    
+       <View style={{ flex: 1 }}>
+        <View
+          testID="4#1"
+          nativeID="hansel_ignore_view_overlay"
+        />
+
       <NavigationContainer>
         <Drawer.Navigator initialRouteName="Home">
           <Drawer.Screen name="Home" component={HomeScreen} />
           <Drawer.Screen name="Settings" component={SettingsScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
+         </View>
     </SafeAreaProvider>
   );
 }
