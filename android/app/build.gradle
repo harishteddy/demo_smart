@@ -1,6 +1,12 @@
 apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
+apply plugin: 'com.google.gms.google-services'
+
+
+
+
+
 
 /**
  * This is the configuration block to customize your React Native Android app.
@@ -116,6 +122,9 @@ dependencies {
     implementation("com.facebook.react:react-android")
     implementation 'com.netcore.android:smartech-nudges:10.2.14'
     implementation 'com.netcore.android:smartech-sdk:3.7.6'
+    implementation 'com.netcore.android:smartech-push:3.5.13'
+    implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
+    implementation("com.google.firebase:firebase-analytics")
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
@@ -123,3 +132,4 @@ dependencies {
         implementation jscFlavor
     }
 }
+
